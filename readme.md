@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project implements a custom large language model (LLM) from scratch using `torch` for story generation, trained on a corpus of stories sourced from Wikisource. The architecture is inspired by `GPT`, leveraging a transformer-only decoder model and causal multi-head attention for autoregressive text generation.
+This project implements a custom large language model (LLM) from scratch using `torch` for story generation, trained on a corpus of stories sourced from [Wikisource](https://en.wikisource.org/wiki/The_Adventures_Of_A_Revolutionary_Soldier/Chapter_I.). The architecture is inspired by `GPT`, leveraging a transformer-only decoder model and causal multi-head attention for autoregressive text generation.
 
 ## Features
 

@@ -15,7 +15,7 @@ class Model(nn.Module):
         self.out_hd=nn.Linear(cfg["emb_dim"],cfg["vocab_size"],bias=False)
 
     def forward(self,in_idx):
-        bt_sz,seq_len=in_idx.shape
+        _,seq_len=in_idx.shape
         tkn_emb=self.tk_emb(in_idx)
         pos_emb=self.pos_emb(torch.arange(seq_len,device=in_idx.device))
         x=tkn_emb+pos_emb
@@ -103,7 +103,7 @@ class MultiheadAttention(nn.Module):
         self.register_buffer('mask',torch.triu(torch.ones(ctxt_len,ctxt_len),diagonal=1))
 
     def forward(self,x):
-        b,num_tk,d_in=x.shape
+        b,num_tk,_=x.shape
         k=self.W_k(x)
         q=self.W_q(x)
         v=self.W_v(x)

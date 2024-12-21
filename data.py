@@ -7,7 +7,7 @@ from matplotlib.ticker import MaxNLocator
 
 tokenizer = tiktoken.get_encoding("gpt2")
 
-def preprocess_lyrics(text):
+def preprocess_data(text):
 
     text=re.sub(r"\[.*?\]", "", text)
     text=re.sub(r"[^\x00-\x7F]+", "", text)

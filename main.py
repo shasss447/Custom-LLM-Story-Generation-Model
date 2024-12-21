@@ -1,8 +1,7 @@
 import torch
 from Model import Model
 from config import Model_Config,Settings
-from data import preprocess_lyrics,create_dataloader,plot_loss
-from generation import generate_text,token_ids_to_text
+from data import preprocess_data,create_dataloader,plot_loss
 from train_eval import train_model
 
 def main(Model_Config,Settings):
@@ -11,7 +10,7 @@ def main(Model_Config,Settings):
     
     # with open("raw_story.txt", "r",encoding="utf-8") as file:
     #  data = file.read()
-    # clean_data = preprocess_lyrics(data)
+    # clean_data = preprocess_data(data)
     # with open("story.txt", "w") as file:
     #  file.write(clean_data)
 
@@ -54,11 +53,9 @@ if __name__=="__main__":
 
     torch.save(model.state_dict(),"model.pth")
 
-    # model=CactusModel(Model_Config)
+    # model=Model(Model_Config)
     # model.load_state_dict(torch.load("model.pth"),weigths_only=True)
-    # model=CactusModel(Model_Config)
     # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    # model.load_state_dict(torch.load("model.pth"))
     # tokenizer = tiktoken.get_encoding("gpt2")
     # tokens = text_to_token_ids("the incident is going to", tokenizer).to(device)
     # generated_tokens = generate_text(model, tokens, mx_n_tk=50, ctxt_sz=Model_Config["context_length"], temp=1, t_k=25)
